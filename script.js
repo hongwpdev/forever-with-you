@@ -704,7 +704,7 @@
     const month = String(dt.getMonth() + 1).padStart(2, '0');
     const day = String(dt.getDate()).padStart(2, '0');
     //$('#footerText').textContent = `${CONFIG.groom.name} & ${CONFIG.bride.name} — ${year}.${month}.${day}`;
-    $('#footerText').textContent = "소중한 날 함께해 주신다면 평생 감사한 마음으로 간직하겠습니다.";
+    $('#footerText').textContent = "소중한 날 함께해 주시면 감사하겠습니다.";
   }
 
   /* ═══════════════════════════════════════════
