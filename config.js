@@ -39,7 +39,7 @@ const CONFIG = {
     date: "2026-08-29",
     time: "17:40",
     venue: "팔레드오페라",
-    hall: "3F 트리아농",
+    hall: "3F 트리아농홀",
     address: "대전 서구 둔산남로 50 팔레드오페라",
     tel: "042-300-5000",
     mapLinks: {
