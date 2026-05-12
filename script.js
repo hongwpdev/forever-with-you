@@ -158,6 +158,7 @@
   function initPetals() {
     const canvas = $('#petalCanvas');
     if (!canvas) return;
+    if (CONFIG.usePetals === false) { canvas.style.display = 'none'; return; }
     const ctx = canvas.getContext('2d');
     let width, height;
     const petals = [];
