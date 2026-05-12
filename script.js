@@ -570,24 +570,26 @@
 
     if (typeof kakao === 'undefined') return;
 
-    const geocoder = new kakao.maps.services.Geocoder();
-    geocoder.addressSearch(w.address, function (result, status) {
-      if (status !== kakao.maps.services.Status.OK) return;
+    kakao.maps.load(function () {
+      const geocoder = new kakao.maps.services.Geocoder();
+      geocoder.addressSearch(w.address, function (result, status) {
+        if (status !== kakao.maps.services.Status.OK) return;
 
-      const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-      const mapContainer = $('#kakaoMap');
-      const map = new kakao.maps.Map(mapContainer, {
-        center: coords,
-        level: 3
+        const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+        const mapContainer = $('#kakaoMap');
+        const map = new kakao.maps.Map(mapContainer, {
+          center: coords,
+          level: 3
+        });
+
+        const marker = new kakao.maps.Marker({ position: coords });
+        marker.setMap(map);
+
+        const infowindow = new kakao.maps.InfoWindow({
+          content: `<div style="padding:6px 10px;font-size:13px;font-family:sans-serif;">${w.venue}</div>`
+        });
+        infowindow.open(map, marker);
       });
-
-      const marker = new kakao.maps.Marker({ position: coords });
-      marker.setMap(map);
-
-      const infowindow = new kakao.maps.InfoWindow({
-        content: `<div style="padding:6px 10px;font-size:13px;font-family:sans-serif;">${w.venue}</div>`
-      });
-      infowindow.open(map, marker);
     });
   }
 
