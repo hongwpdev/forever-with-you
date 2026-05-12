@@ -787,9 +787,9 @@ a {
 }
 
 .location__links {
-  display: flex;
-  gap: var(--spacing-sm);
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
 }
 
 /* ═══════════════════════════════════════════
@@ -1033,12 +1033,21 @@ a {
   color: var(--color-accent);
 }
 
+.btn--kakao,
+.btn--naver,
+.btn--tmap {
+  justify-content: center;
+  width: 100%;
+  padding: 0.7rem 0;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-md);
+}
+
 .btn--kakao {
   background: var(--color-kakao);
   color: #3a1d1d;
-  padding: 0.75rem 1.75rem;
-  border-radius: var(--radius-sm);
-  font-weight: 400;
 }
 
 .btn--kakao:hover {
@@ -1048,9 +1057,6 @@ a {
 .btn--naver {
   background: var(--color-naver);
   color: var(--color-white);
-  padding: 0.75rem 1.75rem;
-  border-radius: var(--radius-sm);
-  font-weight: 400;
 }
 
 .btn--naver:hover {
@@ -1060,9 +1066,6 @@ a {
 .btn--tmap {
   background: #e8001c;
   color: var(--color-white);
-  padding: 0.75rem 1.75rem;
-  border-radius: var(--radius-sm);
-  font-weight: 400;
 }
 
 .btn--tmap:hover {
