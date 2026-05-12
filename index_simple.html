@@ -21,6 +21,7 @@
 
   <link rel="stylesheet" href="styles.css">
   <script src="config.js"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b04b7a7776d87c17a51de279e483c5d9&libraries=services"></script>
 </head>
 <body>
 
@@ -154,7 +155,7 @@
           주소 복사
         </button>
         <div class="location__map animate-item" data-animate="scale-in">
-          <img class="location__map-img" id="locationMapImg" src="" alt="약도" loading="lazy">
+          <div id="kakaoMap" class="location__map-container"></div>
         </div>
         <div class="location__links animate-item" data-animate="fade-up">
           <a class="btn btn--kakao" id="kakaoMapBtn" href="#" target="_blank" rel="noopener">카카오맵</a>

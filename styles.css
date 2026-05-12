@@ -780,10 +780,10 @@ a {
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
 }
 
-.location__map-img {
+.location__map-container {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  height: 280px;
+  border-radius: var(--radius-md);
 }
 
 .location__links {
