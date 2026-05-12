@@ -62,6 +62,17 @@ const CONFIG = {
 
   // ── 오시는 길 ──
   // (mapLinks는 wedding 객체 내에 포함)
+  transport: {
+    bus: [
+      { stop: "복합고속터미널", direction: "승차시", type: "간선", numbers: "105, 106" },
+      { stop: "정부청사터미널", direction: "승차시", type: "간선", numbers: "618" },
+      { stop: "세종특별자치시", direction: "승차시", type: "광역", numbers: "M1" }
+    ],
+    subway: [
+      { line: "지하철 1호선", station: "탄방역", exits: "2번, 3번 출구" },
+      { line: "지하철 1호선", station: "시청역", exits: "1번 출구" }
+    ]
+  },
 
   // ── 마음 전하실 곳 ──
   accounts: {
