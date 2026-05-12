@@ -563,6 +563,7 @@
     $('#locationTel').textContent = w.tel ? `Tel. ${w.tel}` : '';
     $('#kakaoMapBtn').href = w.mapLinks.kakao || '#';
     $('#naverMapBtn').href = w.mapLinks.naver || '#';
+    $('#tmapBtn').href = w.mapLinks.tmap || '#';
 
     $('#copyAddressBtn').addEventListener('click', () => {
       copyToClipboard(w.address, '주소가 복사되었습니다');
