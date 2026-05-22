@@ -696,6 +696,22 @@
       html += `</div></div>`;
     }
 
+    if (t.car && t.car.length > 0) {
+      html += `<div class="transport__group">
+        <div class="transport__title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h1l2-4h10l2 4h1a2 2 0 012 2v6a2 2 0 01-2 2h-2"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>
+          주차 안내
+        </div>
+        <div class="transport__items">`;
+      t.car.forEach(c => {
+        html += `<div class="transport__item">
+          <span class="transport__stop">${c.route}</span>
+          ${c.direction ? `<span class="transport__detail">${c.direction}</span>` : ''}
+        </div>`;
+      });
+      html += `</div></div>`;
+    }
+
     container.innerHTML = html;
   }
 

@@ -73,6 +73,10 @@ const CONFIG = {
     subway: [
       { line: "지하철 1호선", station: "탄방역", exits: "2번, 3번 출구" },
       { line: "지하철 1호선", station: "시청역", exits: "1번 출구" }
+    ],
+    car: [
+      { route: "유성 I.C 또는 북대전 I.C 또는 대전 I.C", direction: "시청방면" },
+      { route: "대전시청 남문 앞" }
     ]
   },
 
