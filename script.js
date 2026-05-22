@@ -668,7 +668,7 @@
       html += `<div class="transport__group">
         <div class="transport__title">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="M2 11h20"/><path d="M7 18v2M17 18v2"/><circle cx="7" cy="15" r="1" fill="currentColor" stroke="none"/><circle cx="17" cy="15" r="1" fill="currentColor" stroke="none"/></svg>
-          버스
+          버스 오시는 길
         </div>
         <div class="transport__items">`;
       t.bus.forEach(b => {
@@ -684,7 +684,7 @@
       html += `<div class="transport__group">
         <div class="transport__title">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="16" rx="2"/><path d="M4 9h16"/><path d="M9 18l-2 4M15 18l2 4"/><circle cx="9" cy="13" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="13" r="1.5" fill="currentColor" stroke="none"/></svg>
-          지하철
+          지하철 오시는 길
         </div>
         <div class="transport__items">`;
       t.subway.forEach(s => {
