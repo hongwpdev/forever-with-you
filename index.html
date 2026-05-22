@@ -39,11 +39,19 @@
   <!-- ═══ Falling Petals ═══ -->
   <canvas id="petalCanvas" class="petal-canvas"></canvas>
 
+  <!-- ═══ Background Music ═══ -->
+  <audio id="bgmAudio" loop>
+    <source src="audio/bgm.mp3" type="audio/mpeg">
+  </audio>
+  <button class="music-btn" id="musicBtn" aria-label="배경음악 재생/일시정지">
+    <span class="music-btn__note">♪</span>
+  </button>
+
   <!-- ═══ Toast Notification ═══ -->
   <div id="toast" class="toast" aria-live="polite"></div>
 
   <!-- ═══ Photo Viewer Modal ═══ -->
-  <div id="photoModal" class="photo-modal" role="dialog" aria-modal="true" aria-label="사진 보기" style="display: none;">
+  <div id="photoModal" class="photo-modal" role="dialog" aria-modal="true" aria-label="사진 보기">
     <button class="photo-modal__close" id="modalClose" aria-label="닫기">&times;</button>
     <button class="photo-modal__nav photo-modal__nav--prev" id="modalPrev" aria-label="이전 사진">&#8249;</button>
     <button class="photo-modal__nav photo-modal__nav--next" id="modalNext" aria-label="다음 사진">&#8250;</button>
@@ -96,7 +104,7 @@
     </section>
 
     <!-- ─── Greeting Section ─── -->
-    <section class="section greeting" id="greeting" style="display: none;">
+    <section class="section greeting" id="greeting">
       <div class="section__inner">
         <div class="ornament animate-item" data-animate="fade-in">&#10047;</div>
         <h2 class="section__title animate-item" data-animate="fade-up" id="greetingTitle"></h2>
@@ -106,7 +114,7 @@
     </section>
 
     <!-- ─── Calendar Section ─── -->
-    <section class="section calendar-section" id="calendarSection" style="display: none;">
+    <section class="section calendar-section" id="calendarSection">
       <div class="section__inner">
         <h2 class="section__title animate-item" data-animate="fade-up">예식 일시</h2>
         <div class="calendar animate-item" data-animate="scale-in" id="calendarGrid"></div>

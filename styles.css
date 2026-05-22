@@ -221,6 +221,51 @@ a {
 }
 
 /* ═══════════════════════════════════════════
+   Music Button
+   ═══════════════════════════════════════════ */
+.music-btn {
+  position: fixed;
+  top: calc(1.25rem + var(--safe-top));
+  right: calc(1.25rem + var(--safe-right));
+  z-index: 8000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background var(--transition), opacity var(--transition);
+}
+
+.music-btn:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.music-btn__note {
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  display: inline-block;
+  animation: musicSpin 3s linear infinite;
+  line-height: 1;
+}
+
+.music-btn.is-paused .music-btn__note {
+  animation-play-state: paused;
+  opacity: 0.4;
+}
+
+@keyframes musicSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ═══════════════════════════════════════════
    Toast
    ═══════════════════════════════════════════ */
 .toast {

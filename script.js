@@ -310,14 +310,10 @@
 
     const parentsHTML = `
       <div class="parent-row">
-        ${parentLine(g.father, g.mother, g.fatherDeceased, g.motherDeceased)}
-        <span class="parent-dot">●</span>
-        의 아들 <span class="child-name">${g.name}</span>
+        ${parentLine(g.father, g.mother, g.fatherDeceased, g.motherDeceased)} 아들 <span class="parent-dot">●</span> <span class="child-name">${g.name}</span>
       </div>
       <div class="parent-row">
-        ${parentLine(b.father, b.mother, b.fatherDeceased, b.motherDeceased)}
-        <span class="parent-dot">●</span>
-        의 딸 <span class="child-name">${b.name}</span>
+        ${parentLine(b.father, b.mother, b.fatherDeceased, b.motherDeceased)} 딸 <span class="parent-dot">●</span> <span class="child-name">${b.name}</span>
       </div>
     `;
 
@@ -700,7 +696,7 @@
       html += `<div class="transport__group">
         <div class="transport__title">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h1l2-4h10l2 4h1a2 2 0 012 2v6a2 2 0 01-2 2h-2"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>
-          주차 이용 시
+          주차 안내
         </div>
         <div class="transport__items">`;
       t.car.forEach(c => {
@@ -780,6 +776,49 @@
   }
 
   /* ═══════════════════════════════════════════
+     Background Music
+     ═══════════════════════════════════════════ */
+
+  function initMusic() {
+    const audio = $('#bgmAudio');
+    const btn = $('#musicBtn');
+    if (!audio || !btn) return;
+
+    let started = false;
+
+    function tryPlay() {
+      audio.play().then(() => {
+        btn.classList.remove('is-paused');
+      }).catch(() => {
+        btn.classList.add('is-paused');
+      });
+    }
+
+    // 첫 터치/클릭 시 자동 재생 시도
+    function onFirstInteraction() {
+      if (started) return;
+      started = true;
+      tryPlay();
+      document.removeEventListener('click', onFirstInteraction);
+      document.removeEventListener('touchstart', onFirstInteraction);
+    }
+
+    document.addEventListener('click', onFirstInteraction);
+    document.addEventListener('touchstart', onFirstInteraction);
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (audio.paused) {
+        tryPlay();
+      } else {
+        audio.pause();
+        btn.classList.add('is-paused');
+      }
+      started = true;
+    });
+  }
+
+  /* ═══════════════════════════════════════════
      Init
      ═══════════════════════════════════════════ */
 
@@ -799,6 +838,7 @@
     initAccounts();
     initFooter();
     initScrollAnimations();
+    initMusic();
 
     const galleryImages = await loadImagesFromFolder('gallery');
     initGallery(galleryImages);
