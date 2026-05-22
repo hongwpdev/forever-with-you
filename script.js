@@ -673,7 +673,7 @@
         <div class="transport__items">`;
       t.bus.forEach(b => {
         html += `<div class="transport__item">
-          <span class="transport__detail">${b.stop}</span>
+          <span class="transport__stop">${b.stop}</span>
           <span class="transport__detail"><span class="transport__badge transport__badge--bus">${b.type}</span> ${b.numbers}</span>
         </div>`;
       });
