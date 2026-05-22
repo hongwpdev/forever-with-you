@@ -21,7 +21,6 @@
 
   <link rel="stylesheet" href="styles.css">
   <script src="config.js"></script>
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b04b7a7776d87c17a51de279e483c5d9&libraries=services&autoload=false"></script>
 </head>
 <body>
 
@@ -43,7 +42,7 @@
   <div id="toast" class="toast" aria-live="polite"></div>
 
   <!-- ═══ Photo Viewer Modal ═══ -->
-  <div id="photoModal" class="photo-modal" role="dialog" aria-modal="true" aria-label="사진 보기" style="display: none;">
+  <div id="photoModal" class="photo-modal" role="dialog" aria-modal="true" aria-label="사진 보기">
     <button class="photo-modal__close" id="modalClose" aria-label="닫기">&times;</button>
     <button class="photo-modal__nav photo-modal__nav--prev" id="modalPrev" aria-label="이전 사진">&#8249;</button>
     <button class="photo-modal__nav photo-modal__nav--next" id="modalNext" aria-label="다음 사진">&#8250;</button>
@@ -69,7 +68,7 @@
       </div>
 
       <!-- Countdown -->
-      <div class="countdown animate-item" data-animate="fade-up" id="countdown" style="display: none;">
+      <div class="countdown animate-item" data-animate="fade-up" id="countdown">
         <p class="countdown__label" id="countdownLabel"></p>
         <div class="countdown__timer">
           <div class="countdown__item">
@@ -96,7 +95,7 @@
     </section>
 
     <!-- ─── Greeting Section ─── -->
-    <section class="section greeting" id="greeting" style="display: none;">
+    <section class="section greeting" id="greeting">
       <div class="section__inner">
         <div class="ornament animate-item" data-animate="fade-in">&#10047;</div>
         <h2 class="section__title animate-item" data-animate="fade-up" id="greetingTitle"></h2>
@@ -106,7 +105,7 @@
     </section>
 
     <!-- ─── Calendar Section ─── -->
-    <section class="section calendar-section" id="calendarSection" style="display: none;">
+    <section class="section calendar-section" id="calendarSection">
       <div class="section__inner">
         <h2 class="section__title animate-item" data-animate="fade-up">예식 일시</h2>
         <div class="calendar animate-item" data-animate="scale-in" id="calendarGrid"></div>
@@ -124,7 +123,7 @@
     </section>
 
     <!-- ─── Our Story Section ─── -->
-    <section class="section story" id="story" style="display: none;">
+    <section class="section story" id="story">
       <div class="section__inner">
         <h2 class="section__title animate-item" data-animate="fade-up" id="storyTitle"></h2>
         <p class="story__text animate-item" data-animate="fade-up" id="storyContent"></p>
@@ -133,7 +132,7 @@
     </section>
 
     <!-- ─── Gallery Section ─── -->
-    <section class="section gallery" id="gallery" style="display: none;">
+    <section class="section gallery" id="gallery">
       <div class="section__inner">
         <h2 class="section__title animate-item" data-animate="fade-up">갤러리</h2>
         <div class="gallery__grid" id="galleryGrid"></div>
@@ -155,15 +154,12 @@
           주소 복사
         </button>
         <div class="location__map animate-item" data-animate="scale-in">
-          <div id="kakaoMap" class="location__map-container"></div>
+          <img class="location__map-img" id="locationMapImg" src="" alt="약도" loading="lazy">
         </div>
         <div class="location__links animate-item" data-animate="fade-up">
           <a class="btn btn--kakao" id="kakaoMapBtn" href="#" target="_blank" rel="noopener">카카오맵</a>
           <a class="btn btn--naver" id="naverMapBtn" href="#" target="_blank" rel="noopener">네이버지도</a>
-          <a class="btn btn--tmap" id="tmapBtn" href="#" target="_blank" rel="noopener">티맵</a>
         </div>
-
-        <div class="transport animate-item" data-animate="fade-up" id="transportInfo"></div>
       </div>
     </section>
 
@@ -176,7 +172,7 @@
         <!-- Groom Accounts -->
         <div class="accordion animate-item" data-animate="fade-up">
           <button class="accordion__trigger" id="groomAccordion" aria-expanded="false">
-            <span class="accordion__icon">🤵</span>
+            <span class="accordion__icon">&#9835;</span>
             <span>신랑측 계좌번호</span>
             <svg class="accordion__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
@@ -188,7 +184,7 @@
         <!-- Bride Accounts -->
         <div class="accordion animate-item" data-animate="fade-up">
           <button class="accordion__trigger" id="brideAccordion" aria-expanded="false">
-            <span class="accordion__icon">👰</span>
+            <span class="accordion__icon">&#9835;</span>
             <span>신부측 계좌번호</span>
             <svg class="accordion__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
@@ -201,7 +197,7 @@
 
     <!-- ─── Footer ─── -->
     <footer class="footer">
-      <p class="footer__text" id="footerText">귀한 시간 내어 함께해 주신다면 평생 감사한 마음으로 간직하겠습니다.</p>
+      <p class="footer__text" id="footerText"></p>
     </footer>
 
   </main>
