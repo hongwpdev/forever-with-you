@@ -668,13 +668,13 @@
       html += `<div class="transport__group">
         <div class="transport__title">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="M2 11h20"/><path d="M7 18v2M17 18v2"/><circle cx="7" cy="15" r="1" fill="currentColor" stroke="none"/><circle cx="17" cy="15" r="1" fill="currentColor" stroke="none"/></svg>
-          버스 오시는 길
+          버스 이용 시
         </div>
         <div class="transport__items">`;
       t.bus.forEach(b => {
         html += `<div class="transport__item">
-          <span class="transport__stop">${b.stop}</span>
-          <span class="transport__detail">${b.direction} <span class="transport__badge transport__badge--bus">${b.type}</span> ${b.numbers}</span>
+          <span class="transport__detail">${b.stop}</span>
+          <span class="transport__detail"><span class="transport__badge transport__badge--bus">${b.type}</span> ${b.numbers}</span>
         </div>`;
       });
       html += `</div></div>`;
@@ -684,7 +684,7 @@
       html += `<div class="transport__group">
         <div class="transport__title">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="16" rx="2"/><path d="M4 9h16"/><path d="M9 18l-2 4M15 18l2 4"/><circle cx="9" cy="13" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="13" r="1.5" fill="currentColor" stroke="none"/></svg>
-          지하철 오시는 길
+          지하철 이용 시
         </div>
         <div class="transport__items">`;
       t.subway.forEach(s => {
@@ -700,7 +700,7 @@
       html += `<div class="transport__group">
         <div class="transport__title">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h1l2-4h10l2 4h1a2 2 0 012 2v6a2 2 0 01-2 2h-2"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>
-          자가용
+          주차 이용 시
         </div>
         <div class="transport__items">`;
       t.car.forEach(c => {
