@@ -75,8 +75,7 @@ const CONFIG = {
       { line: "지하철 1호선", station: "시청역", exits: "1번 출구" }
     ],
     car: [
-      { route: "유성 I.C 또는 북대전 I.C 또는 대전 I.C", direction: "시청방면" },
-      { route: "대전시청 남문 앞" }
+      { route: "유성 I.C 또는 북대전 I.C 또는 대전 I.C 시청방면, 대전시청 남문 앞" }
     ]
   },
 
