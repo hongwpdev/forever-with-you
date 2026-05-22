@@ -674,7 +674,7 @@
       t.bus.forEach(b => {
         html += `<div class="transport__item">
           <span class="transport__stop">${b.stop}</span>
-          <span class="transport__detail">${b.direction} &nbsp;·&nbsp; <span class="transport__badge transport__badge--bus">${b.type}</span> ${b.numbers}</span>
+          <span class="transport__detail">${b.direction} <span class="transport__badge transport__badge--bus">${b.type}</span> ${b.numbers}</span>
         </div>`;
       });
       html += `</div></div>`;
@@ -690,7 +690,7 @@
       t.subway.forEach(s => {
         html += `<div class="transport__item">
           <span class="transport__stop">${s.station}</span>
-          <span class="transport__detail">${s.line} &nbsp;·&nbsp; ${s.exits}</span>
+          <span class="transport__detail">${s.line} ${s.exits}</span>
         </div>`;
       });
       html += `</div></div>`;
