@@ -704,7 +704,7 @@
         </div>
         <div class="transport__items">`;
       t.car.forEach(c => {
-        html += `<div class="transport__item">
+        html += `<div class="transport__item transport__item--full">
           <span class="transport__stop">${c.route}</span>
           ${c.direction ? `<span class="transport__detail">${c.direction}</span>` : ''}
         </div>`;

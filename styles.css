@@ -841,6 +841,15 @@ a {
   border-bottom: none;
 }
 
+.transport__item--full {
+  justify-content: flex-start;
+}
+
+.transport__item--full .transport__stop {
+  white-space: normal;
+  word-break: keep-all;
+}
+
 .transport__stop {
   font-size: 0.8125rem;
   font-weight: 400;
