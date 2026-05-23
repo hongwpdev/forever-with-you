@@ -573,7 +573,7 @@ a {
    Greeting Section
    ═══════════════════════════════════════════ */
 .greeting {
-  background-color: var(--color-bg);
+  background-color: var(--color-bg-warm);
 }
 
 .greeting__text {
@@ -619,7 +619,7 @@ a {
    Calendar Section
    ═══════════════════════════════════════════ */
 .calendar-section {
-  background-color: var(--color-bg-warm);
+  background-color: var(--color-bg);
 }
 
 .calendar {
