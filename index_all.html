@@ -218,6 +218,7 @@
 
   <script src="script.js"></script>
   <script>
+    // 확대/축소 방지
     document.addEventListener('touchmove', function(e) {
       if (e.touches.length > 1) e.preventDefault();
     }, { passive: false });
@@ -227,6 +228,29 @@
       if (now - lastTouchEnd < 300) e.preventDefault();
       lastTouchEnd = now;
     }, false);
+
+    // 캡처 방지
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    document.addEventListener('keydown', function(e) {
+      if (
+        e.key === 'PrintScreen' ||
+        (e.ctrlKey && ['s','S','u','U','p','P','a','A'].includes(e.key)) ||
+        (e.ctrlKey && e.shiftKey && ['i','I','j','J','c','C'].includes(e.key)) ||
+        e.key === 'F12'
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    });
+    // 개발자 도구 감지 시 콘텐츠 흐림 처리
+    (function() {
+      const threshold = 160;
+      setInterval(function() {
+        const widthDiff = window.outerWidth - window.innerWidth > threshold;
+        const heightDiff = window.outerHeight - window.innerHeight > threshold;
+        document.body.style.filter = (widthDiff || heightDiff) ? 'blur(10px)' : '';
+      }, 1000);
+    })();
   </script>
 </body>
 </html>
